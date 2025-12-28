@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* 3D Flip Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.group:hover .group-hover\:rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --background: 0 0% 100%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 220 30% 25%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 30% 15%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 96%;
+    --sidebar-accent-foreground: 220 30% 25%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 210 100% 50%;
+
+    --azure: 210 100% 50%;
+    --azure-dark: 220 80% 25%;
+    --azure-light: 210 100% 97%;
+    --navy: 220 80% 15%;
+    --navy-light: 220 60% 25%;
+    --databricks: 15 100% 55%;
+    --databricks-dark: 15 90% 45%;
+  }
+
+  .dark {
+    --background: 220 40% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 35% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 35% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 210 100% 55%;
+    --primary-foreground: 220 40% 8%;
+
+    --secondary: 220 30% 18%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 30% 18%;
+    --muted-foreground: 210 15% 55%;
+
+    --accent: 210 100% 55%;
+    --accent-foreground: 220 40% 8%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 210 100% 55%;
+
+    --sidebar-background: 220 35% 12%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 210 100% 55%;
+    --sidebar-primary-foreground: 220 40% 8%;
+    --sidebar-accent: 220 30% 18%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 30% 20%;
+    --sidebar-ring: 210 100% 55%;
+
+    --azure: 210 100% 55%;
+    --azure-dark: 220 80% 35%;
+    --azure-light: 220 40% 15%;
+    --navy: 220 60% 25%;
+    --navy-light: 220 50% 35%;
+    --databricks: 15 100% 60%;
+    --databricks-dark: 15 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-azure {
+    background: linear-gradient(135deg, hsl(var(--azure)) 0%, hsl(var(--azure-dark)) 100%);
+  }
+
+  .gradient-navy {
+    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(220 80% 12%) 0%, hsl(220 70% 20%) 50%, hsl(210 80% 25%) 100%);
+  }
+
+  .glassmorphism {
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--primary) / 0.2);
+  }
+
+  .glassmorphism-hover {
+    @apply transition-all duration-300;
+  }
+
+  .glassmorphism-hover:hover {
+    background: hsl(var(--card) / 0.9);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+    transform: scale(1.02);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+}
