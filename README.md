@@ -1,5 +1,7 @@
 # ajmal.cs
 
+**[View Live Portfolio](https://ajmalcs.github.io/portfolio/)**
+
 **Cloud Data Professional | Technology Lead - Data & Analytics | BI Solutions Architect**
 
 Cloud Data Professional with extensive experience in Business Intelligence, Data Analytics, and Engineering. Specialized in the US Logistics domain with a proven track record of delivering end-to-end BI solutions. Currently serving as a **Technology Lead** at Infosys in Ottawa, Canada.
